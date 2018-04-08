@@ -1,11 +1,9 @@
-#ifdef OPS_H
 #define OPS_H
+#ifdef OPS_H
 #include <ops.h>
+using namespace asr;
 
-void asr::test::print() {
 
-  printf("hello, world!\n");
-}
 
 
 

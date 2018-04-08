@@ -1,6 +1,6 @@
 CUR_DIR=$(shell pwd)
 # echo $(CUR_DIR)
-CC=gcc
+CC=g++
 SRC_DIR=$(CUR_DIR)/src
 BUILD_DIR=$(CUR_DIR)/build
 INCLUDE_DIR=$(CUR_DIR)/include
