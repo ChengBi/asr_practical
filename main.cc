@@ -8,12 +8,26 @@ int main() {
 
 	asr::Scalar<float> s(10);
 	asr::Scalar<float> s1(15);
-	for (int i = 0; i < 15; i ++) {
+	for (int i = 0; i < 10; i ++) {
 		s << i*1.0;
 		s1 << i*1.0 + 2;
 	}
-	std::string temp = s.tostring();
-	printf("%s\n", temp);
+	// std::string temp = s.tostring();
+	// std::cout << s1.tostring() << std::endl;
+	// std::cout << s1.tail_index << std::endl;
+	// std::cout << s1.length << std::endl;
+
+	std::cout << s.tostring() << std::endl;
+	asr::Scalar<float> temp = s + s;
+
+	// std::cout << (s+s).tostring() << std::endl;
+	std::cout << temp.tostring() << std::endl;
+
+
+	// std::cout << (s+s1).tostring() << std::endl;
+
+
+	// printf("%s\n", temp.c_str());
 	// printf("%s\n", s1.tostring());
 
 	// printf("%d\n", s.size());
