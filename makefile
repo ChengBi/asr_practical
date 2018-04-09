@@ -10,7 +10,7 @@ VPATH=$(BUILD_DIR)
 MATH_DIR=$(SRC_DIR)/math
 CORE_DIR=$(SRC_DIR)/core
 OBJ=exception.o main.o
-EXE=$(BIN_DIR)/main.exe
+EXE=$(BIN_DIR)/main
 
 $(EXE):$(OBJ)
 	$(CC) -o $(EXE) $(OBJ)
