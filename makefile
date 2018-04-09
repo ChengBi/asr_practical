@@ -1,4 +1,5 @@
-CUR_DIR=$(shell pwd)
+# CUR_DIR=$(shell pwd)
+CUR_DIR=.
 # echo $(CUR_DIR)
 CC=g++
 SRC_DIR=$(CUR_DIR)/src
@@ -8,19 +9,23 @@ BIN_DIR=$(CUR_DIR)/bin
 VPATH=$(BUILD_DIR)
 
 MATH_DIR=$(SRC_DIR)/math
-OBJ=$(BUILD_DIR)/ops.o $(BUILD_DIR)/main.o
-EXE=$(BIN_DIR)/main
+CORE_DIR=$(SRC_DIR)/core
+OBJ=asr_array.o asr_ops.o main.o
+EXE=$(BIN_DIR)/main.exe
 
 $(EXE): $(OBJ)
-	$(shell mv $(CUR_DIR)/*.o $(BUILD_DIR)/)
 	$(CC) -o $(EXE) $(OBJ)
 
-$(BUILD_DIR)/ops.o:
-	$(CC) -c $(MATH_DIR)/ops.cc -I $(INCLUDE_DIR)
+asr_array.o:
+	$(CC) -c $(CORE_DIR)/asr_array.cc -I$(INCLUDE_DIR)
 
-$(BUILD_DIR)/main.o:
-	$(CC) -c $(MATH_DIR)/main.cc -I $(INCLUDE_DIR)
+asr_ops.o:
+	$(CC) -c $(MATH_DIR)/asr_ops.cc -I$(INCLUDE_DIR)
+
+main.o:
+	$(CC) -c $(CUR_DIR)/main.cc -I$(INCLUDE_DIR)
 
 
 clean:
-	rm -rf $(BUILD_DIR)/*.o
+	rm -rf $(OBJ)
+	rm -rf $(BIN_DIR)/*
