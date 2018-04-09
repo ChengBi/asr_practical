@@ -1,16 +1,26 @@
 #ifndef EXCEPTION_H
 #define EXCEPTION_H
 
-// #include <string>
+#include <string>
 #include <cstdio>
+#include <exception>
 
 namespace asr {
 
-	template <class Elem> class IndexExceedException : public std::exception{
+	class IndexExceedException : public std::exception {
 	public:
-		const char* trace() {
-			return "captured Exception: IndexExceedException";
-		};
+		const char* what();
 	};
+
+	class ArraySizeMismatchException : public std::exception {
+	public:
+		const char* what();
+	};
+
+
 }
+
+
+
+
 #endif
